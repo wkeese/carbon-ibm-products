@@ -13,6 +13,7 @@ import {
   ModalBody,
   ModalFooter,
   ModalHeader,
+  Section,
   Tooltip,
 } from '@carbon/react';
 // Import portions of React that are needed.
@@ -340,7 +341,7 @@ export let CreateFullPage = React.forwardRef(
     // currently, we are not supporting the use of 'view all' toggle state
     /* istanbul ignore next */
     return (
-      <div
+      <Section
         {...rest}
         ref={ref}
         className={cx(blockClass, className)}
@@ -429,7 +430,7 @@ export let CreateFullPage = React.forwardRef(
             </ModalFooter>
           </ComposedModal>
         </div>
-      </div>
+      </Section>
     );
   }
 );
