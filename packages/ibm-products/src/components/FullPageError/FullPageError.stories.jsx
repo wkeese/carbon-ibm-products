@@ -16,9 +16,6 @@ import { FullPageError } from '.';
 import mdx from './FullPageError.mdx';
 
 import styles from './_storybook-styles.scss?inline';
-
-const storyClass = 'full-page-error-stories';
-
 export default {
   title: 'IBM Products/Components/Full-page error/FullPageError',
   component: FullPageError,
@@ -57,11 +54,8 @@ const defaultProps = {
 /**
  * TODO: Declare template(s) for one or more scenarios.
  */
-const StoryWrapper = ({ children }) => {
-  return <div className={`${storyClass}__story-wrapper`}>{children}</div>;
-};
-
 const Template = (args) => {
+  const storyClass = 'full-page-error-stories';
   return (
     <div className={`${storyClass}__viewport`}>
       <UiShell>
@@ -69,21 +63,20 @@ const Template = (args) => {
           <div className={`${storyClass}__breadcrumb-container`}>
             <Breadcrumbs className={`${storyClass}__breadcrumb`} />
           </div>
-          <StoryWrapper>
-            <FullPageError
-              title={`${args.title}`}
-              label={`${args.label}`}
-              description={`${args.description}`}
-            >
-              <Link size="lg" href={'/'}>
-                – Forwarding Link 1
-              </Link>
-              <br />
-              <Link size="lg" href={'/'}>
-                – Forwarding Link 1
-              </Link>
-            </FullPageError>
-          </StoryWrapper>
+          <FullPageError
+            title={`${args.title}`}
+            label={`${args.label}`}
+            description={`${args.description}`}
+            kind={`${args.kind}`}
+          >
+            <Link size="lg" href={'/'}>
+              – Forwarding Link 1
+            </Link>
+            <br />
+            <Link size="lg" href={'/'}>
+              – Forwarding Link 1
+            </Link>
+          </FullPageError>
         </div>
       </UiShell>
     </div>
